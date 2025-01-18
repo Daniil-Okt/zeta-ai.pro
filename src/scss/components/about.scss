@@ -1,5 +1,5 @@
 .about {    
-    background: url(@img/about-bg.svg) no-repeat center center / cover;
+    background: url(@img/about/about-bg.svg) no-repeat center center / cover;
     min-height: rem(1050);
     margin-top: rem(-104);
     display: flex;
@@ -134,7 +134,7 @@
             }
         }
         &.left {
-            left: rem(-1.5);
+            left: rem(-1.8);
             top: rem(42);
             width: rem(20);
             height: rem(20.91);
