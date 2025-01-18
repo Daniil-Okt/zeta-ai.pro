@@ -1,0 +1,154 @@
+.centric {
+    padding-top: rem(120);
+    &__container {
+    }
+
+    &__body {
+        position: relative;
+        min-height: rem(560);
+        background-image: linear-gradient(#130118, #210329);
+    }
+
+    &__body-bg {
+        display: flex;
+        justify-content: end;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        overflow: hidden;
+        
+        img {
+            @include adaptiveClamp(width, 990, 505);
+            position: relative;
+            right: 0;
+            height: auto;
+        }
+    }
+    &__body-bg-img {
+        
+    }
+    &__body-left-border, &__body-right-border {
+        position: absolute;
+        top: 0%;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+        width: 100%;
+    }
+    &__body-left-border {
+        height: 100%;
+        background-image: repeating-linear-gradient(0deg, #ce7efc, #ce7efc 2px, transparent 2px, transparent 12px, #ce7efc 12px);
+        background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+    }
+    &__body-right-border {
+        background-image: repeating-linear-gradient(0deg, #ce7efc, #ce7efc 2px, transparent 2px, transparent 12px, #ce7efc 12px);
+        background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+        background-position: 100% 0;
+        background-repeat: no-repeat;
+    }
+    .featur__sq-top-left {
+        display: block;
+    }
+    .fast__sq-top-right {
+        bottom: 0;
+        top: auto;
+    }
+
+    &__corner {
+        position: absolute;
+        width: rem(20);
+        height: rem(20);
+        &::before, &::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: rem(4);
+            box-shadow: 0 0 8px 0 #bd51fd, 0 0 24px 0 #bd51fd, 0 0 120px 0 #bd51fd, 0 0 200px 0 rgba(189, 81, 253, 0.5);
+            background: #ce7dfe;   
+            bottom:0;
+            left: 0;
+        }
+        &::after {
+            height: 100%;
+            width: rem(4);
+        }
+        &.bot-left {
+            bottom: 0;
+            left: 0;
+        }
+        &.top-right {
+            top: 0;
+            right: 0;
+            &::before {
+                top: 0;
+                bottom: auto;
+            }
+            &::after {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+
+    &__row-item {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        @media(max-width:1024px){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        position: relative;
+        min-height: rem(242);
+        &:nth-child(1) {
+            @media(max-width:1024px){
+                .item-featur__rec-bot-right-bot,.item-featur__rec-bot-right-right {
+                    right: auto;
+                    left: -1px;
+                }
+            }
+        }
+        &:nth-child(2) {
+            @media(max-width:1024px){
+                .centric__body-right-border {
+                    display: none;
+                }
+                .item-featur__rec-bot-left-bot,.item-featur__rec-bot-left-left {
+                    bottom: auto;
+                    top: -1px;
+                }
+
+                background-image: 
+                repeating-linear-gradient(90deg, #ce7efc, #ce7efc 2px, transparent 2px, transparent 12px, #ce7efc 12px), /* Верхняя грань */
+                repeating-linear-gradient(90deg, #ce7efc, #ce7efc 2px, transparent 2px, transparent 12px, #ce7efc 12px); /* Нижняя грань */
+                background-size: 100% 1px; /* Задаем высоту для грани */
+                background-position: 0 0, 0 100%; /* Верхняя сторона, нижняя сторона */
+                background-repeat: no-repeat;
+            }
+        }
+        &:nth-child(3) {
+            @media(min-width:1025px){
+                .centric__body-right-border {
+                    display: none;
+                }
+            }
+            @media(max-width:1024px){
+                .item-featur__rec-bot-left-bot,.item-featur__rec-bot-left-left {
+                    bottom: auto;
+                    top: -1px;
+                    right: rem(-1);
+                    left: auto;
+                }
+            }
+        }
+    }
+}
+
+
+
